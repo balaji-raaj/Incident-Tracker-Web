@@ -40,7 +40,7 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('Click delete button', () => {
+  it('Click delete button', () => {
     expect(component.delete).toHaveBeenCalled();
   });
 });
