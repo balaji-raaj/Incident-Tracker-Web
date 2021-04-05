@@ -1,0 +1,30 @@
+<div class="Container">
+    <h1>Tracker Details</h1>
+    <button type="button" [routerLink]="['/create']">Create new tracker</button>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tracker Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>                            
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tracker of trackerDetails">
+                <td>{{tracker.id}}</td>
+                <td>{{tracker.description}}</td>
+                <td>{{tracker.severity}}</td>
+                <td>{{tracker.createdDate}}</td>
+                <td>{{tracker.updateDate}}</td>
+                <td>{{tracker.status}}</td>
+                <td>
+                    <button type="button" class="btn btn-link" [routerLink]="['/update']">Update</button>
+                    <button type="button" class="btn btn-link" (click)="delete(tracker.id)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
